@@ -1,10 +1,7 @@
 # G1Virti
-Praktische Übungen zur PT Virtualisierungstechnologien
+Practical exercises on PT virtualization technologies
 
-G1 Mitglieder:
-- Harald Beier
-- Susanne Peer
-- Patrick Prugger
+The contents were developed as group work from group 01
 
 ### Directory Structure
 
