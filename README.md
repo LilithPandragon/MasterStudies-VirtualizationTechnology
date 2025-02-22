@@ -1,7 +1,5 @@
-# G1Virti
-Practical exercises on PT virtualization technologies
-
-The contents were developed as group work from group 01
+The contents of this repo were created as part of the PT Virtualization Technologies  
+in the Cloud Computing Engineering master's course. They were developed as group work by Group 01.
 
 ### Directory Structure
 
