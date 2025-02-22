@@ -1,0 +1,46 @@
+//input zu powershell dsc befehle
+
+
+# Prerequisite
+Set-WSManQuickConfig -SkipNetworkProfileCheck -Force
+
+# Check which dsc resources are available
+Get-DscResource
+
+# DSC Configuration
+configuration PrintSpooler
+{
+    Node localhost
+    {
+        Service PrinterSpooler
+        {
+           Name    = "Spooler"
+           Ensure  = "Present"
+           State   = "Stopped"
+        }
+    }
+}
+
+# Export DSC Configuration
+PrintSpooler -OutputPath: "./PrintSpooler"
+
+# Test if the node is in required state
+Test-DscConfiguration -Path .\PrintSpooler
+
+# Apply the configuration
+Start-DscConfiguration -Path "./PrintSpooler" -Wait -Verbose -Force
+
+# Get the current state of the configuration
+Get-DscConfiguration
+
+# Removes the applied configuration
+Remove-DscConfigurationDocument -Stage Current
+
+# Get the current state of the configuration
+Get-DscConfiguration
+
+# Test if the node is in required state
+Test-DscConfiguration -Path .\PrintSpooler
+
+# Get information about the local configuration manager
+Get-DscLocalConfigurationManager

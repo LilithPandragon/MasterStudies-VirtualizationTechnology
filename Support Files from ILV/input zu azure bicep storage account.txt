@@ -1,0 +1,20 @@
+// Input zu Azure Bicep - storage account
+
+targetScope = 'resourceGroup'
+
+param location string = 'westeurope'
+
+resource storageaccount 'Microsoft.Storage/storageAccounts@2021-02-01' = {
+  name: 'sahsbglndpt2'
+  location: location
+  kind: 'StorageV2'
+  properties: {
+    allowBlobPublicAccess: false
+    minimumTlsVersion: 'TLS1_2'
+    // allowSharedKeyAccess: false
+  }
+  sku: {
+    name: 'Standard_LRS'
+  }
+}
+}

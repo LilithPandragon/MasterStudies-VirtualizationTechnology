@@ -1,0 +1,24 @@
+//Input zu powershell dsc
+
+Configuration Webserver {
+
+    # Import the module that contains the resources we're using.
+    Import-DscResource -ModuleName PsDesiredStateConfiguration
+
+    Node 'Webserver' {
+
+        # Ensure Web-Server (IIS) feature is installed
+        WindowsFeature WebServer {
+            Name   = "Web-Server"
+            Ensure = "Present"
+        }
+
+        # Ensure Spooler service is stopped
+        Service PrintSpooler {
+            Name    = "Spooler"
+            State  = "Stopped"
+        }
+
+    }
+
+}

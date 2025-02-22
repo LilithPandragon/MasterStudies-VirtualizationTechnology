@@ -1,0 +1,18 @@
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.vscode/ipch
+*.code-workspace
+.vscode
+
+# Local History for VS Code
+.history/
+
+# VS Code user-specific files
+*.vsix
+
+# VS Code config backups
+*.code-profile

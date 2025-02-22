@@ -1,0 +1,5 @@
+admin_password = ""
+tags = {
+  Environment = "Development"
+  Project     = "VM UE1-3"
+} 
